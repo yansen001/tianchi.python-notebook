@@ -315,4 +315,4 @@ print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 
 未设定参数时，每次输出都会换行
 
-time2020/12/27 22:38
+time:2020/12/27 22:38
