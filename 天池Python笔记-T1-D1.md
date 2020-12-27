@@ -3,6 +3,7 @@
 ## 变量 运算符 数据类型
 
 ###1.注释
+
 1.单行注释
 
 使用 `#`表示
@@ -104,3 +105,71 @@ print((1 > 3) or (9 < 2))  # False
 print(not (2 >1))  # False
 ```
 
+5.三元运算
+
+```python
+x, y = 4, 5
+if x < y:
+    small = x
+else:
+    small = y
+
+print(small)  # 4
+```
+
+等价于
+
+```python
+x, y = 4, 5
+small = x if x < y else y
+print(small)  # 4
+```
+
+6.成员运算符
+
+| 运算符   | 描述                                                    |
+| -------- | ------------------------------------------------------- |
+| `in`     | 如果在指定的序列中找到值返回 True，否则返回 False。     |
+| `not in` | 如果在指定的序列中没有找到值返回 True，否则返回 False。 |
+
+```python
+letters = ['A', 'B', 'C']
+if 'A' in letters:
+    print('A' + ' exists')
+if 'h' not in letters:
+    print('h' + ' not exists')
+
+# A exists
+# h not exists
+```
+
+7.身份运算符
+
+| 运算符   | 描述                                           |
+| -------- | ---------------------------------------------- |
+| `is`     | 判断两个变量是不是引用自同一个对象（内存地址） |
+| `is not` | 判断两个变量是不是引用自不同对象               |
+
+```python
+a = "hello"
+b = "hello"
+print(a is b, a == b)  # True True
+print(a is not b, a != b)  # False False
+```
+
+str为不可变类型，内存地址固定，
+
+```python
+a = ["hello"]
+b = ["hello"]
+print(a is b, a == b)  # False True
+print(a is not b, a != b)  # True False
+```
+
+`is` `is not`对比的是两个变量的内存地址
+
+`==` `!=` 对比的是两个变量的值
+
+比较的两个变量，指向的都是地址不可变的类型（str等），那么is，is not 和 ==，！= 是完全等价的。
+
+对比的两个变量，指向的是地址可变的类型（list，dict，tuple等），则两者是有区别的。
