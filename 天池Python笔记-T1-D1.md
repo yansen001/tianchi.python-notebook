@@ -314,3 +314,5 @@ print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 - `flush`是立即把内容输出到流文件，不作缓存。
 
 未设定参数时，每次输出都会换行
+
+time2020/12/27 22:38
