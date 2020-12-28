@@ -290,5 +290,65 @@ print('循环结束。')
 
 占位符，免于编译出错
 
-### 10. 列表推导式
+### 10. 推导式
+
+用于从一个数据序列构建一个新的数据序列
+
+#### 10.1 列表推导式
+
+ `[ expr for value in collection [if condition] ]`
+
+if主要起条件判断作用，collection数据中只有满足if条件的才会被留下，最后统一生成为一个数据列表。
+
+```python
+x = [-4, -2, 0, 2, 4]
+y = [a * 2 for a in x] #生成一个值为2*x的新序列y
+print(y)
+# [-8, -4, 0, 4, 8]
+```
+
+#### 10.2 元组推导式
+
+`( expr for value in collection [if condition] )`
+
+```python
+a = (x for x in range(10))
+print(a)
+
+# <generator object <genexpr> at 0x0000025BE511CC48>
+
+print(tuple(a))
+
+# (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+```
+
+### 10.3 字典推导式
+
+`{ key_expr: value_expr for value in collection [if condition] }`
+
+```python
+b = {i: i % 2 == 0 for i in range(10) if i % 3 == 0}
+print(b)
+# {0: True, 3: False, 6: True, 9: False}
+```
+
+#### 10.4 集合推导式 
+
+可用于去重
+
+`{ expr for value in collection [if condition] }`
+
+```python
+e = (i for i in range(10))
+print(e)
+# <generator object <genexpr> at 0x0000007A0B8D01B0>
+
+print(next(e))  # 0
+print(next(e))  # 1
+
+for each in e:
+    print(each, end=' ')
+
+# 2 3 4 5 6 7 8 9
+```
 
