@@ -24,3 +24,10 @@
 4.python 中包含哪些数据类型？这些数据类型之间如何转换
 
 int float bool
+
+```python
+int(	)	#	转换为int型
+float(	)	#	转换为浮点型
+str(	)	#	转换为字符串
+```
+
